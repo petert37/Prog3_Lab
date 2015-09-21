@@ -2,8 +2,10 @@ package hu.petert.lab3.commands;
 
 import hu.petert.lab3.Command;
 import hu.petert.lab3.Helper;
+import hu.petert.lab3.SyntaxException;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.Files;
@@ -11,29 +13,18 @@ import java.nio.file.NoSuchFileException;
 
 public class Remove implements Command {
     @Override
-    public File execute(File wd, String[] cmd) {
+    public File execute(File wd, String[] cmd) throws SyntaxException, FileNotFoundException {
 
         if(cmd.length < 2){
-            System.err.println("No such file or directory");
-            return wd;
+            throw new SyntaxException();
         }
 
-        String path = new Helper().getFullName(cmd, 1);
-
-        File f;
-        try {
-            f = new File(wd.getCanonicalPath() + File.separator + path);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return wd;
-        }
+        File file = new Helper().getFileFromArgs(wd, cmd, 1, true);
 
         try {
-            Files.delete(f.toPath());
-        } catch (NoSuchFileException e) {
-            System.err.println("No such file or directory");
+            Files.delete(file.toPath());
         } catch (DirectoryNotEmptyException e) {
-            System.err.println("Directory is not empty");
+            System.err.println("Failed to remove: directory is not empty");
         } catch (Exception e){
             e.printStackTrace();
         }

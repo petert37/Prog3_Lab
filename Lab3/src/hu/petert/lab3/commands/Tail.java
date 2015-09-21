@@ -2,29 +2,26 @@ package hu.petert.lab3.commands;
 
 import hu.petert.lab3.Command;
 import hu.petert.lab3.Helper;
+import hu.petert.lab3.SyntaxException;
 
 import java.io.*;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.ListIterator;
-import java.util.NoSuchElementException;
 
 public class Tail implements Command {
     @Override
-    public File execute(File wd, String[] cmd) {
+    public File execute(File wd, String[] cmd) throws SyntaxException, FileNotFoundException {
         int length = 10;
         boolean lengthSpecified = false;
 
         if(cmd.length < 2){
-            System.err.println("No such file");
-            return wd;
+            throw new SyntaxException();
         }
 
         if(cmd[1].equals("-n")){
             lengthSpecified = true;
             if(cmd.length < 4){
-                System.err.println("Syntax error");
-                return wd;
+                throw new SyntaxException();
             }
 
             try {
@@ -35,38 +32,18 @@ public class Tail implements Command {
             }
         }
 
-        String path =  new Helper().getFullName(cmd, lengthSpecified ? 3 : 1);
+        File file = new Helper().getFileFromArgs(wd, cmd, lengthSpecified ? 3 : 1, true);
 
-        File f;
-        try {
-            f = new File(wd.getCanonicalPath() + File.separator + path);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return wd;
-        }
-
-        if(!f.exists()){
-            System.err.println("No such file");
-            return wd;
-        }
-
-        printLastLines(f, length);
+        printLastLines(file, length);
 
         return wd;
     }
 
-    private boolean printLastLines(File file, int lines) {
+    private boolean printLastLines(File file, int lines) throws FileNotFoundException {
 
         LinkedList<String> list = new LinkedList<>();
 
-        BufferedReader reader;
-
-        try {
-            reader = new BufferedReader(new FileReader(file));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return false;
-        }
+        BufferedReader reader = new BufferedReader(new FileReader(file));;
 
         String line;
         try {

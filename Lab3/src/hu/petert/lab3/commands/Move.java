@@ -2,33 +2,24 @@ package hu.petert.lab3.commands;
 
 import hu.petert.lab3.Command;
 import hu.petert.lab3.Helper;
+import hu.petert.lab3.SyntaxException;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Move implements Command {
     @Override
-    public File execute(File wd, String[] cmd) {
+    public File execute(File wd, String[] cmd) throws SyntaxException, FileNotFoundException {
         Helper helper = new Helper();
 
         if(cmd.length < 3){
-            System.err.println("No such file");
-            return wd;
+            throw new SyntaxException();
         }
 
-        File to, from;
-        try {
-            from = new File(wd.getCanonicalPath() + File.separator + helper.getFullName(cmd, 1));
-            to = new File(wd.getCanonicalPath() + File.separator + helper.getFullName(cmd, helper.nextIndex));
-        } catch (IOException e) {
-            e.printStackTrace();
-            return wd;
-        }
+        File from = helper.getFileFromArgs(wd, cmd, 1, true);
 
-        if(!from.exists()){
-            System.err.println("No such file");
-            return wd;
-        }
+        File to = helper.getFileFromArgs(wd, cmd, helper.nextIndex, false);
 
         if(!moveFile(from, to))
             System.err.println("Failed to move file");

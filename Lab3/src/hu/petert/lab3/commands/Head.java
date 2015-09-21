@@ -2,26 +2,25 @@ package hu.petert.lab3.commands;
 
 import hu.petert.lab3.Command;
 import hu.petert.lab3.Helper;
+import hu.petert.lab3.SyntaxException;
 
 import java.io.*;
 
 public class Head implements Command {
     @Override
-    public File execute(File wd, String[] cmd) {
+    public File execute(File wd, String[] cmd) throws SyntaxException, FileNotFoundException {
 
         int length = 10;
         boolean lengthSpecified = false;
 
         if(cmd.length < 2){
-            System.err.println("No such file");
-            return wd;
+            throw new SyntaxException();
         }
 
         if(cmd[1].equals("-n")){
             lengthSpecified = true;
             if(cmd.length < 4){
-                System.err.println("Syntax error");
-                return wd;
+                throw new SyntaxException();
             }
 
             try {
@@ -32,22 +31,9 @@ public class Head implements Command {
             }
         }
 
-        String path =  new Helper().getFullName(cmd, lengthSpecified ? 3 : 1);
+        File file = new Helper().getFileFromArgs(wd, cmd, lengthSpecified ? 3 : 1, true);
 
-        File f;
-        try {
-            f = new File(wd.getCanonicalPath() + File.separator + path);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return wd;
-        }
-
-        if(!f.exists()){
-            System.err.println("No such file");
-            return wd;
-        }
-
-        printLines(f, length);
+        printLines(file, length);
 
         return wd;
     }

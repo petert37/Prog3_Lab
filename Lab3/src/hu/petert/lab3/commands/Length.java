@@ -2,26 +2,17 @@ package hu.petert.lab3.commands;
 
 import hu.petert.lab3.Command;
 import hu.petert.lab3.Helper;
+import hu.petert.lab3.SyntaxException;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Length implements Command {
     @Override
-    public File execute(File wd, String[] cmd) {
+    public File execute(File wd, String[] cmd) throws FileNotFoundException, SyntaxException{
 
-        File f;
-        try {
-            f = new File(wd.getCanonicalPath() + File.separator + new Helper().getFullName(cmd, 1));
-        } catch (IOException e) {
-            e.printStackTrace();
-            return wd;
-        }
-
-        if(!f.exists()){
-            System.err.println("No such file");
-            return wd;
-        }
+        File f = new Helper().getFileFromArgs(wd, cmd, 1, true);
 
         System.out.println("Length: " + f.length() + " bytes");
 

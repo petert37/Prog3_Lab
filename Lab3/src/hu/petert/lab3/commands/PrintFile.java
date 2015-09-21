@@ -2,33 +2,16 @@ package hu.petert.lab3.commands;
 
 import hu.petert.lab3.Command;
 import hu.petert.lab3.Helper;
+import hu.petert.lab3.SyntaxException;
 
 import java.io.*;
 
 public class PrintFile implements Command {
     @Override
-    public File execute(File wd, String[] cmd) {
+    public File execute(File wd, String[] cmd) throws FileNotFoundException, SyntaxException {
 
-        File f;
-        try {
-            f = new File(wd.getCanonicalPath() + File.separator + new Helper().getFullName(cmd, 1));
-        } catch (IOException e) {
-            e.printStackTrace();
-            return wd;
-        }
-
-        if(!f.exists()){
-            System.err.println("No such file");
-            return wd;
-        }
-
-        BufferedReader reader;
-        try {
-            reader = new BufferedReader(new FileReader(f));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return wd;
-        }
+        File file = new Helper().getFileFromArgs(wd, cmd, 1, true);
+        BufferedReader reader = new BufferedReader(new FileReader(file));
 
         String line;
 
@@ -44,6 +27,7 @@ public class PrintFile implements Command {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return wd;
     }
 }

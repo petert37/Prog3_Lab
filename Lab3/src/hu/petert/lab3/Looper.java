@@ -2,10 +2,7 @@ package hu.petert.lab3;
 
 import hu.petert.lab3.commands.*;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class Looper {
 
@@ -31,22 +28,28 @@ public class Looper {
                 e.printStackTrace();
                 continue;
             }
-            if(cmd[0].equals("exit")) wd = new Exit().execute(wd, cmd);
-            else if(cmd[0].equals("reclist")) wd = new RecursiveList().execute(wd, cmd);
-            else if(cmd[0].equals("pwd")) wd = new PrintPath().execute(wd, cmd);
-            else if(cmd[0].equals("cd")) wd = new ChangeDir().execute(wd, cmd);
-            else if(cmd[0].equals("ls")) wd = new List().execute(wd, cmd);
-            else if(cmd[0].equals("rm")) wd = new Remove().execute(wd, cmd);
-            else if(cmd[0].equals("mkdir")) wd = new MakeDir().execute(wd, cmd);
-            else if(cmd[0].equals("cp")) wd = new Copy().execute(wd, cmd);
-            else if(cmd[0].equals("head")) wd = new Head().execute(wd, cmd);
-            else if(cmd[0].equals("mv")) wd = new Move().execute(wd, cmd);
-            else if(cmd[0].equals("cat")) wd = new PrintFile().execute(wd, cmd);
-            else if(cmd[0].equals("wc")) wd = new Stats().execute(wd, cmd);
-            else if(cmd[0].equals("length")) wd = new Length().execute(wd, cmd);
-            else if(cmd[0].equals("tail")) wd = new Tail().execute(wd, cmd);
-            else if(cmd[0].equals("grep")) wd = new PrintFilePattern().execute(wd, cmd);
-            else System.err.println("Command not found");
+            try {
+                if(cmd[0].equals("exit")) wd = new Exit().execute(wd, cmd);
+                else if(cmd[0].equals("reclist")) wd = new RecursiveList().execute(wd, cmd);
+                else if(cmd[0].equals("pwd")) wd = new PrintPath().execute(wd, cmd);
+                else if(cmd[0].equals("cd")) wd = new ChangeDir().execute(wd, cmd);
+                else if(cmd[0].equals("ls")) wd = new List().execute(wd, cmd);
+                else if(cmd[0].equals("rm")) wd = new Remove().execute(wd, cmd);
+                else if(cmd[0].equals("mkdir")) wd = new MakeDir().execute(wd, cmd);
+                else if(cmd[0].equals("cp")) wd = new Copy().execute(wd, cmd);
+                else if(cmd[0].equals("head")) wd = new Head().execute(wd, cmd);
+                else if(cmd[0].equals("mv")) wd = new Move().execute(wd, cmd);
+                else if(cmd[0].equals("cat")) wd = new PrintFile().execute(wd, cmd);
+                else if(cmd[0].equals("wc")) wd = new Stats().execute(wd, cmd);
+                else if(cmd[0].equals("length")) wd = new Length().execute(wd, cmd);
+                else if(cmd[0].equals("tail")) wd = new Tail().execute(wd, cmd);
+                else if(cmd[0].equals("grep")) wd = new PrintFilePattern().execute(wd, cmd);
+                else System.err.println("Command not found");
+            } catch (FileNotFoundException e) {
+                System.err.println("File not found");
+            } catch (SyntaxException e) {
+                System.err.println("Syntax error");
+            }
 
         }
     }

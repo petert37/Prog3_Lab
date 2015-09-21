@@ -2,37 +2,27 @@ package hu.petert.lab3.commands;
 
 import hu.petert.lab3.Command;
 import hu.petert.lab3.Helper;
+import hu.petert.lab3.SyntaxException;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class ChangeDir implements Command {
     @Override
-    public File execute(File wd, String[] cmd) {
+    public File execute(File wd, String[] cmd) throws FileNotFoundException, SyntaxException {
 
-        if(cmd.length < 2 || cmd[1] == null){
-            System.err.println("No such directory");
-            return wd;
-        }
+        if(cmd.length < 2) throw new SyntaxException();
 
-        String path = new Helper().getFullName(cmd, 1);
+        if(cmd[1].equals("..")) return wd.getParentFile();
 
-        if(path.equals("..")) return wd.getParentFile();
+        File file = new Helper().getFileFromArgs(wd, cmd, 1, true);
 
-        File newFile;
-
-        try {
-            newFile = new File(wd.getCanonicalPath() + File.separator + path);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return wd;
-        }
-
-        if(newFile.exists() && newFile.isDirectory()){
-            return newFile;
+        if(file.isDirectory()){
+            return file;
         } else {
-            System.err.println("No such directory");
-            return wd;
+            throw new FileNotFoundException("Not a directory");
         }
+
     }
 }

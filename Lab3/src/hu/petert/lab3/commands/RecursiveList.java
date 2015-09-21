@@ -18,7 +18,7 @@ public class RecursiveList implements Command {
 
         for(int i = 0; i < files.length; i++){
             System.out.println(tab + files[i].getName());
-            if(files[i].isDirectory()) listDir(files[i], tab + " ");
+            if(files[i].isDirectory()) listDir(files[i], tab + "  ");
         }
     }
 }
