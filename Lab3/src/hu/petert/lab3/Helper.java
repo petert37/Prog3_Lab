@@ -19,6 +19,8 @@ public class Helper {
         else{
             fileNameTemp = cmd[nameStartIndex];
 
+            if(fileNameTemp.equals("\"")|| fileNameTemp.equals("\"\"")) throw new SyntaxException();
+
             for(int i = nameStartIndex + 1; i < cmd.length; i++){
                 fileNameTemp += " " + cmd[i];
                 if(fileNameTemp.charAt(fileNameTemp.length() - 1) == '\"') {
