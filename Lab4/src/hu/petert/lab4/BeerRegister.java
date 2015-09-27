@@ -1,10 +1,11 @@
 package hu.petert.lab4;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class BeerRegister {
+public class BeerRegister implements Serializable {
 
     public enum ListStyle{
         DEFAULT, NAME, STYLE, STRENGTH
@@ -47,6 +48,27 @@ public class BeerRegister {
 
         for(Beer b : tmp)
             System.out.println(b.toString());
+
+    }
+
+    public void delete(String name){
+        ArrayList<Beer> tmp = new ArrayList<>();
+        tmp.addAll(beerList);
+
+        Comparator<Beer> comparator = new NameComparator();
+
+        Collections.sort(tmp, comparator);
+
+        Beer tmpBeer = new Beer(name, "", 0d);
+
+        int key = Collections.binarySearch(tmp, tmpBeer, comparator);
+
+        if(key < 0){
+            System.err.println("Beer not found");
+            return;
+        }
+
+        beerList.remove(tmp.get(key));
 
     }
 

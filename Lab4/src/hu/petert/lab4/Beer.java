@@ -1,6 +1,8 @@
 package hu.petert.lab4;
 
-public class Beer {
+import java.io.Serializable;
+
+public class Beer implements Serializable {
 
     private String name;
     private String style;
