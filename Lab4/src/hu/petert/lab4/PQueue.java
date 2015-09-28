@@ -45,7 +45,7 @@ public class PQueue<T extends Comparable> implements Iterable<T>{
 
     @Override
     public Iterator<T> iterator() {
-        
+
         Collections.sort(list);
         Collections.reverse(list);
         return list.iterator();
