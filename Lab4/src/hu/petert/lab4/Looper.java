@@ -49,6 +49,9 @@ public class Looper {
                     break;
                 case "exit":
                     System.exit(0);
+                    break;
+                default:
+                    System.out.println("Command not found");
             }
 
         }
