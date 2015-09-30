@@ -116,6 +116,7 @@ public class Looper {
         try {
             ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(file));
             beerRegister = (BeerRegister) inputStream.readObject();
+            inputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -124,12 +125,28 @@ public class Looper {
     }
 
     private void deleteBeer(String[] cmd){
-        if(cmd.length < 2){
+        if(cmd.length < 3){
             System.err.println("Syntax error");
             return;
         }
 
-        beerRegister.delete(cmd[1]);
+        ListStyle listStyle;
+
+        switch (cmd[1]){
+            case "name":
+                listStyle = ListStyle.NAME;
+                break;
+            case "style":
+                listStyle = ListStyle.STYLE;
+                break;
+            case "strength":
+                listStyle = ListStyle.STRENGTH;
+                break;
+            default:
+                listStyle = ListStyle.NAME;
+        }
+
+        beerRegister.delete(cmd[2], listStyle);
 
     }
 

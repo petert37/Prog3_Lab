@@ -23,9 +23,11 @@ public class BeerRegister implements Serializable {
         beerList.add(new Beer(name, style, strength));
     }
 
+
     public void list(ListStyle listStyle){
-        ArrayList<Beer> tmp = new ArrayList<>();
-        tmp.addAll(beerList);
+
+        @SuppressWarnings("unchecked")
+        ArrayList<Beer> tmp = (ArrayList<Beer>) beerList.clone();
 
         if(listStyle != ListStyle.DEFAULT){
             Comparator<Beer> comparator;
@@ -51,15 +53,33 @@ public class BeerRegister implements Serializable {
 
     }
 
-    public void delete(String name){
-        ArrayList<Beer> tmp = new ArrayList<>();
-        tmp.addAll(beerList);
+    public void delete(String value, ListStyle listStyle){
 
-        Comparator<Beer> comparator = new NameComparator();
+        @SuppressWarnings("unchecked")
+        ArrayList<Beer> tmp = (ArrayList<Beer>) beerList.clone();
+
+        Beer tmpBeer;
+
+        Comparator<Beer> comparator;
+        switch (listStyle){
+            case NAME:
+                comparator = new NameComparator();
+                tmpBeer = new Beer(value, "", 0d);
+                break;
+            case STYLE:
+                comparator = new StyleComparator();
+                tmpBeer = new Beer("", value, 0d);
+                break;
+            case STRENGTH:
+                comparator = new StrengthComparator();
+                tmpBeer = new Beer("", "", Double.parseDouble(value));
+                break;
+            default:
+                comparator = new NameComparator();
+                tmpBeer = new Beer(value, "", 0d);
+        }
 
         Collections.sort(tmp, comparator);
-
-        Beer tmpBeer = new Beer(name, "", 0d);
 
         int key = Collections.binarySearch(tmp, tmpBeer, comparator);
 
