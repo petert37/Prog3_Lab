@@ -4,6 +4,8 @@ import java.util.Random;
 
 public class Consumer extends Thread {
 
+    private static final int SLEEP_MAX_MS = 3000;
+
     final Fifo fifo;
     String s;
     Random random;
@@ -32,7 +34,7 @@ public class Consumer extends Thread {
             }
 
             try {
-                Thread.sleep(random.nextInt(3000));
+                Thread.sleep(random.nextInt(SLEEP_MAX_MS));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

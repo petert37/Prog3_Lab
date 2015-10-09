@@ -4,6 +4,8 @@ import java.util.Random;
 
 public class Producer implements Runnable{
 
+    private static final int SLEEP_MAX_MS = 3000;
+
     String message;
     int counter;
     final Fifo fifo;
@@ -34,7 +36,7 @@ public class Producer implements Runnable{
             }
 
             try {
-                Thread.sleep(random.nextInt(3000));
+                Thread.sleep(random.nextInt(SLEEP_MAX_MS));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

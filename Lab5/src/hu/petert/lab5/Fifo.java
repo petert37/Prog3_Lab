@@ -5,14 +5,16 @@ import java.util.List;
 
 public class Fifo {
 
+    private static final int MAX_ELEMENTS = 10;
+
     List<String> list;
 
     public Fifo(){
-        list = new ArrayList<>(10);
+        list = new ArrayList<>(MAX_ELEMENTS);
     }
 
     void put(String s) throws InterruptedException {
-        while(list.size() >= 10){
+        while(list.size() >= MAX_ELEMENTS){
             wait();
         }
         list.add(s);
