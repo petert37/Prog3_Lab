@@ -10,12 +10,20 @@ public class Producer implements Runnable{
     int counter;
     final Fifo fifo;
     Random random;
+    int delay = 0;
 
     public Producer(String message, Fifo fifo) {
         this.message = message;
         this.fifo = fifo;
         counter = 0;
         random = new Random();
+    }
+
+    public Producer(String message, Fifo fifo, int delay) {
+        this.message = message;
+        this.fifo = fifo;
+        this.delay = delay;
+        counter = 0;
     }
 
     @Override
@@ -36,7 +44,7 @@ public class Producer implements Runnable{
             }
 
             try {
-                Thread.sleep(random.nextInt(SLEEP_MAX_MS));
+                Thread.sleep(delay > 0 ? delay : random.nextInt(SLEEP_MAX_MS));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

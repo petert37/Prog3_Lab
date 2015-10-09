@@ -9,11 +9,18 @@ public class Consumer extends Thread {
     final Fifo fifo;
     String s;
     Random random;
+    int delay = 0;
 
-    public Consumer(Fifo fifo, String s) {
+    public Consumer(String s, Fifo fifo) {
         this.fifo = fifo;
         this.s = s;
         random = new Random();
+    }
+
+    public Consumer(String s, Fifo fifo, int delay) {
+        this.fifo = fifo;
+        this.s = s;
+        this.delay = delay;
     }
 
     @Override
@@ -34,7 +41,7 @@ public class Consumer extends Thread {
             }
 
             try {
-                Thread.sleep(random.nextInt(SLEEP_MAX_MS));
+                Thread.sleep(delay > 0 ? delay : random.nextInt(SLEEP_MAX_MS));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
