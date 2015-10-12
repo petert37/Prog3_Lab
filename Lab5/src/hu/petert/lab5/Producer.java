@@ -6,41 +6,38 @@ public class Producer implements Runnable{
 
     private static final int SLEEP_MAX_MS = 3000;
 
-    String message;
-    int counter;
-    final Fifo fifo;
-    Random random;
-    int delay = 0;
+    private String message;
+    private int counter;
+    private final Fifo fifo;
+    private Random random;
+    private int delay = 0;
+    private volatile boolean isRunning;
 
     public Producer(String message, Fifo fifo) {
         this.message = message;
         this.fifo = fifo;
         counter = 0;
         random = new Random();
+        isRunning = true;
     }
 
     public Producer(String message, Fifo fifo, int delay) {
-        this.message = message;
-        this.fifo = fifo;
+        this(message, fifo);
         this.delay = delay;
-        counter = 0;
     }
 
     @Override
     public void run() {
-        while(true) {
+        while(isRunning) {
             String timeString = String.valueOf(System.currentTimeMillis());
             timeString = timeString.substring(timeString.length() - 5, timeString.length());
 
-            synchronized (fifo){
-                try {
-                    fifo.put(message + " " + counter);
-                    System.out.println("produced " + message + " " + counter + " " + timeString);
-                    counter++;
-                    fifo.notify();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            try {
+                fifo.put(message + " " + counter);
+                System.out.println("produced " + message + " " + counter + " " + timeString);
+                counter++;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
 
             try {
@@ -50,4 +47,9 @@ public class Producer implements Runnable{
             }
         }
     }
+
+    public void stopThread(){
+        isRunning = false;
+    }
+
 }

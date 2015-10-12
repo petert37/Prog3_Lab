@@ -10,34 +10,32 @@ public class Consumer extends Thread {
     String s;
     Random random;
     int delay = 0;
+    private volatile boolean isRunning;
 
     public Consumer(String s, Fifo fifo) {
         this.fifo = fifo;
         this.s = s;
         random = new Random();
+        isRunning = true;
     }
 
     public Consumer(String s, Fifo fifo, int delay) {
-        this.fifo = fifo;
-        this.s = s;
+        this(s, fifo);
         this.delay = delay;
     }
 
     @Override
     public void run() {
-        while (true){
+        while (isRunning){
             String str;
             String timeString = String.valueOf(System.currentTimeMillis());
             timeString = timeString.substring(timeString.length() - 5, timeString.length());
 
-            synchronized (fifo){
-                try {
-                    str = fifo.get();
-                    System.out.println("consumed " + s + " " + str + " " + timeString);
-                    fifo.notify();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            try {
+                str = fifo.get();
+                System.out.println("consumed " + s + " " + str + " " + timeString);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
 
             try {
@@ -47,5 +45,9 @@ public class Consumer extends Thread {
             }
 
         }
+    }
+
+    public void stopThread(){
+        isRunning = false;
     }
 }
