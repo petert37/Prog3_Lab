@@ -734,7 +734,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="bk+k8x1LQkuVPbQHVNahkAAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="s4hqrokN9kWxXIC/rmMI7QAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Application</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">hu.petert.lab6.Application</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="Gj0TOyqJ0UGDIBNdcAJOSAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -765,7 +765,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="OgLzd+pJrU2dqZXqeYgAEAAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="WHxhEeVEuUmI73xdEp3nEgAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Observer</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">hu.petert.lab6.Observer</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="7BwL3oO100OqNbH1LpGuNAAA">
 <XPD:ATTR name="Text" type="string">&lt;&lt;interface&gt;&gt;</XPD:ATTR>
@@ -796,7 +796,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="rrUi9IaBWk2HXLOo/rL73wAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="G6jMuG2Dt0qd7wznCLDqgwAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Observable</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">hu.petert.lab6.Observable</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="0tS2yttFMUGphH3LiptiYQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -911,7 +911,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="92mTiNv2CU65wnNEvPnAcwAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="9VHYpBtljkW9FeMqnSl1zgAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">PercentCounter</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">hu.petert.lab6.PercentCounter</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="fe2S7JPmnU6YRfu2+7YvbgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -968,7 +968,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="3E2MVkLiQUqVqUZJyBYGZgAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="WCBmDDwj1UanyVAMGEwOfwAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">StdOutLogger</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">hu.petert.lab6.StdOutLogger</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="3FQFEI4JzEWR1UZzTrxHbwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -999,7 +999,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="L+2gaytYkEiPMBepm1JaZAAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="457yEtdcdUuQGYDFYeJU2gAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">FileLogger</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">hu.petert.lab6.FileLogger</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="Dz8+n/3HOUKoQC04Yv+0ZwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -1179,7 +1179,7 @@
 </XPD:OBJ>
 <XPD:ATTR name="#OwnedElements" type="integer">16</XPD:ATTR>
 <XPD:OBJ name="OwnedElements[0]" type="UMLClass" guid="bTLNjlH0ZkuJzMQMCxzNlgAA">
-<XPD:ATTR name="Name" type="string">Application</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">hu.petert.lab6.Application</XPD:ATTR>
 <XPD:REF name="Namespace">+JygY9FMiki2SV+W0ntuLQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">ZGB1wbYhCUKKphOo6c6aAwAA</XPD:REF>
@@ -1210,7 +1210,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[1]" type="UMLClass" guid="atelOMso6Emxx0vMfqMLMwAA">
-<XPD:ATTR name="Name" type="string">Observer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">hu.petert.lab6.Observer</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">interface</XPD:ATTR>
 <XPD:REF name="Namespace">+JygY9FMiki2SV+W0ntuLQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
@@ -1247,7 +1247,7 @@
 <XPD:REF name="Associations[0]">Kez2JyW8UU2WnL3ySUg89wAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[2]" type="UMLClass" guid="5DElIJV0D0e1NNNzruambwAA">
-<XPD:ATTR name="Name" type="string">Observable</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">hu.petert.lab6.Observable</XPD:ATTR>
 <XPD:REF name="Namespace">+JygY9FMiki2SV+W0ntuLQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">zj84D08rLEWojdPf0kuz/QAA</XPD:REF>
@@ -1337,7 +1337,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[4]" type="UMLClass" guid="rr7Oq/RpmEWBnpvmuHlQSwAA">
-<XPD:ATTR name="Name" type="string">PercentCounter</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">hu.petert.lab6.PercentCounter</XPD:ATTR>
 <XPD:REF name="Namespace">+JygY9FMiki2SV+W0ntuLQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">G0fiWRuk20qK8yBNEpXeEgAA</XPD:REF>
@@ -1382,7 +1382,7 @@
 <XPD:REF name="Views[3]">S+gZuPxkp0ake7iXYN6J1QAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[6]" type="UMLClass" guid="DX/H8yrnOE2fyebJLCDdHQAA">
-<XPD:ATTR name="Name" type="string">StdOutLogger</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">hu.petert.lab6.StdOutLogger</XPD:ATTR>
 <XPD:REF name="Namespace">+JygY9FMiki2SV+W0ntuLQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">4CvYXcPVXESFaHZdnrLioAAA</XPD:REF>
@@ -1399,7 +1399,7 @@
 <XPD:REF name="Instances[0]">YNCTh6stqkSBlTCv56WsRgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[7]" type="UMLClass" guid="Sr371mQ/KkiJ1S3k5hUflAAA">
-<XPD:ATTR name="Name" type="string">FileLogger</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">hu.petert.lab6.FileLogger</XPD:ATTR>
 <XPD:REF name="Namespace">+JygY9FMiki2SV+W0ntuLQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">ThLmjUlT+0+WhTgv8td+GAAA</XPD:REF>
@@ -1412,7 +1412,7 @@
 <XPD:REF name="SupplierDependencies[0]">NuSKQwpsOk2mvUD6gR3tXAAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="zzI8qDJ9ZUO3gTrBwaYnLgAA">
-<XPD:ATTR name="Name" type="string">FileLogger</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">hu.petert.lab6.FileLogger</XPD:ATTR>
 <XPD:REF name="Owner">Sr371mQ/KkiJ1S3k5hUflAAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="HAL3d5W1JU+7+Q4AOyCtzAAA">
@@ -1500,7 +1500,7 @@
 <XPD:REF name="Owner">y9VSdfwlC0aXxvsNM0NgJQAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="P1ZBSikStkine15tdRdTbgAA">
-<XPD:ATTR name="Name" type="string">observable: Observable</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">observable: hu.petert.lab6.Observable</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">zsgsw/tGJUib2ou8fYiIQQAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -1532,7 +1532,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="mYPghWVgQkerVICxv9qtewAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="ZIA92wH+g0+s37m2cfJSMgAA">
 <XPD:ATTR name="FontStyle" type="integer">4</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Application</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">hu.petert.lab6.Application</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="NmfW3NZawkmqX0MPYtW7WgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -1556,7 +1556,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="frapGiVWnECMGdMbS/4pyAAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="UZAz0XNIJUetYmwSu1rNJwAA">
 <XPD:ATTR name="FontStyle" type="integer">4</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">pc : PercentCounter</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">pc : hu.petert.lab6.PercentCounter</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="SNpx1vkXz0Sv9MPXspWzUgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -1580,7 +1580,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="2Dg+eWiq/UaGUbohuRD1VwAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="r0F4VHEUB0mN2SzmTATQsAAA">
 <XPD:ATTR name="FontStyle" type="integer">4</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">sol : StdOutLogger</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">sol : hu.petert.lab6.StdOutLogger</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="J0TaQrj/E0yTGsA74ynY6wAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -1604,7 +1604,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="e6Ko6jfMukG+zf07809xBgAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="suUwQDsw/ESU+9Z5/x1/6QAA">
 <XPD:ATTR name="FontStyle" type="integer">4</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">fl : FileLogger</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">fl : hu.petert.lab6.FileLogger</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="IBW8Nm4z+U2+k6C/GFhYNgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -1628,7 +1628,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="P0DQQSkgmU+J/xP1kv5Y9wAA">
 <XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1 : PercentCounter()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1 : hu.petert.lab6.PercentCounter()</XPD:ATTR>
 <XPD:REF name="Model">pWK3ot9fN0Og9Jskvva80QAA</XPD:REF>
 <XPD:REF name="HostEdge">+jmZKqti60KuXgpvitTVRQAA</XPD:REF>
 </XPD:OBJ>
@@ -1664,7 +1664,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="mWkVNNyXjEuPYHLaD2hKpAAA">
 <XPD:ATTR name="Alpha" type="real">-3,30674070444166</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">60,8276253029822</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">2 : StdOutLogger()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">2 : hu.petert.lab6.StdOutLogger()</XPD:ATTR>
 <XPD:REF name="Model">MZA42rtrnkmlT6clOVgq3AAA</XPD:REF>
 <XPD:REF name="HostEdge">CrlDcqqZn0KG+3g8tn3kJAAA</XPD:REF>
 </XPD:OBJ>
@@ -1700,7 +1700,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="qSjGS/40CUuxsEPSBZKJUwAA">
 <XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">3 : FileLogger(&quot;observer.txt&quot;): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">3 : hu.petert.lab6.FileLogger(&quot;observer.txt&quot;): void</XPD:ATTR>
 <XPD:REF name="Model">Etbblhi9qUu4KeGXAIDNiwAA</XPD:REF>
 <XPD:REF name="HostEdge">81/po/BMS0CwX+mUHDa8TAAA</XPD:REF>
 </XPD:OBJ>
@@ -1837,7 +1837,7 @@
 </XPD:OBJ>
 <XPD:ATTR name="#ParticipatingStimuli" type="integer">6</XPD:ATTR>
 <XPD:OBJ name="ParticipatingStimuli[0]" type="UMLStimulus" guid="pWK3ot9fN0Og9Jskvva80QAA">
-<XPD:ATTR name="Name" type="string">PercentCounter</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">hu.petert.lab6.PercentCounter</XPD:ATTR>
 <XPD:REF name="Sender">CF0saO7IbEabnbI+xi370QAA</XPD:REF>
 <XPD:REF name="Receiver">HwUACKk9oECisK8JHMfyPQAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLCallAction" guid="BpQ0N9pRzE6kGrVZ19kF/QAA">
@@ -1851,7 +1851,7 @@
 <XPD:REF name="Views[3]">uBFRrWvk3UCvvH78c2TiDgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[1]" type="UMLStimulus" guid="MZA42rtrnkmlT6clOVgq3AAA">
-<XPD:ATTR name="Name" type="string">StdOutLogger</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">hu.petert.lab6.StdOutLogger</XPD:ATTR>
 <XPD:REF name="Sender">CF0saO7IbEabnbI+xi370QAA</XPD:REF>
 <XPD:REF name="Receiver">YNCTh6stqkSBlTCv56WsRgAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLCallAction" guid="bC/VcCoGJ0ascSrtvU9E/AAA">
@@ -1926,7 +1926,7 @@
 </XPD:OBJ>
 <XPD:ATTR name="#ParticipatingInstances" type="integer">4</XPD:ATTR>
 <XPD:OBJ name="ParticipatingInstances[0]" type="UMLObject" guid="CF0saO7IbEabnbI+xi370QAA">
-<XPD:ATTR name="Name" type="string">Application</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">hu.petert.lab6.Application</XPD:ATTR>
 <XPD:REF name="CollaborationInstanceSet">P9p4cwQf70GHQpcyzcLfTAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">2</XPD:ATTR>
 <XPD:REF name="Views[0]">xnrt4tHYdkSEEOT4W+6klAAA</XPD:REF>
