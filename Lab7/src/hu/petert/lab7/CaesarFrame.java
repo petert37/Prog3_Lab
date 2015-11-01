@@ -52,7 +52,15 @@ public class CaesarFrame extends JFrame {
         topPanel.add(inputTextField);
 
         JButton codeButton = new JButton("Code!");
-        codeButton.addActionListener(new OkButtonActionListener(this));
+        //codeButton.addActionListener(new OkButtonActionListener(this));
+        codeButton.addActionListener(
+                l -> {
+                    if(getCodeDirection() == CodeDirection.CODE)
+                        updateOutput();
+                    else if(getCodeDirection() == CodeDirection.DECODE)
+                        updateInput();
+                }
+        );
         topPanel.add(codeButton);
 
         bottomPanel.add(new JLabel("Output:"));
