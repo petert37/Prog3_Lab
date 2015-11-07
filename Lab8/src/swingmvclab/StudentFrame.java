@@ -1,6 +1,8 @@
 package swingmvclab;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.FileInputStream;
@@ -13,22 +15,22 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableRowSorter;
 
 /*
- * A megjelenÌtendı ablakunk oszt·lya.
+ * A megjelen√≠tend≈ë ablakunk oszt√°lya.
  */
 public class StudentFrame extends JFrame {
 
     /*
-     * Ebben az objektumban vannak a hallgatÛi adatok.
-     * A program indul·s ut·n betˆlti az adatokat f·jlbÛl, bez·r·skor pedig kimenti oda.
+     * Ebben az objektumban vannak a hallgat√≥i adatok.
+     * A program indul√°s ut√°n bet√∂lti az adatokat f√°jlb√≥l, bez√°r√°skor pedig kimenti oda.
      * 
-     * NE M”DOSÕTSD!
+     * NE M√ìDOS√çTSD!
      */
     private StudentData data;
     private JTextField nameField, neptunField;
 
     /*
-     * Itt hozzuk lÈtre Ès adjuk hozz· az ablakunkhoz a k¸lˆnbˆzı komponenseket
-     * (t·bl·zat, beviteli mezı, gomb).
+     * Itt hozzuk l√©tre √©s adjuk hozz√° az ablakunkhoz a k√ºl√∂nb√∂z≈ë komponenseket
+     * (t√°bl√°zat, beviteli mez≈ë, gomb).
      */
     private void initComponents() {
         this.setLayout(new BorderLayout());
@@ -55,11 +57,10 @@ public class StudentFrame extends JFrame {
         neptunField.setColumns(6);
 
         JButton addButton = new JButton("Felvesz");
-        addButton.addActionListener(e ->
-                        data.addStudent(nameField.getText(), neptunField.getText())
-        );
+//        addButton.addActionListener(e -> data.addStudent(nameField.getText(), neptunField.getText()));
+        addButton.addActionListener(new MyButtonListener());
 
-        southPanel.add(new JLabel("Nev:"));
+        southPanel.add(new JLabel("N√©v:"));
         southPanel.add(nameField);
         southPanel.add(new JLabel("Neptun:"));
         southPanel.add(neptunField);
@@ -67,20 +68,19 @@ public class StudentFrame extends JFrame {
 
         add(southPanel, BorderLayout.SOUTH);
 
-        // ...
     }
 
     /*
      * Az ablak konstruktora.
      *
-     * NE M”DOSÕTSD!
+     * NE M√ìDOS√çTSD!
      */
     @SuppressWarnings("unchecked")
     public StudentFrame() {
-        super("Hallgatoi nyilvantartas");
+        super("Hallgat√≥i nyilv√°ntart√°s");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        // Indul·skor betˆltj¸k az adatokat
+        // Indul√°skor bet√∂ltj√ºk az adatokat
         try {
             data = new StudentData();
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("students.dat"));
@@ -90,7 +90,7 @@ public class StudentFrame extends JFrame {
             ex.printStackTrace();
         }
 
-        // Bez·r·skor mentj¸k az adatokat
+        // Bez√°r√°skor mentj√ºk az adatokat
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -104,19 +104,19 @@ public class StudentFrame extends JFrame {
             }
         });
 
-        // FelÈpÌtj¸k az ablakot
+        // Fel√©p√≠tj√ºk az ablakot
         setMinimumSize(new Dimension(500, 200));
         initComponents();
         setLocationRelativeTo(null);
     }
 
     /*
-     * A program belÈpÈsi pontja.
+     * A program bel√©p√©si pontja.
      * 
-     * NE M”DOSÕTSD!
+     * NE M√ìDOS√çTSD!
      */
     public static void main(String[] args) {
-        // MegjelenÌtj¸k az ablakot
+        // Megjelen√≠tj√ºk az ablakot
         StudentFrame sf = new StudentFrame();
         sf.setVisible(true);
     }
@@ -142,6 +142,19 @@ public class StudentFrame extends JFrame {
                 component.setBackground(new Color(0xff0000));
 
             return component;
+        }
+    }
+
+    private class MyButtonListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String neptun = neptunField.getText();
+            if(neptun.length() == 6){
+                data.addStudent(nameField.getText(), neptunField.getText());
+            } else {
+                JOptionPane.showMessageDialog(null, "Neptun k√≥d rossz!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 

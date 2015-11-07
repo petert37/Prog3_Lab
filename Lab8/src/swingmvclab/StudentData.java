@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * A hallgatók adatait tároló osztály.
+ * A hallgatÃ³k adatait tÃ¡rolÃ³ osztÃ¡ly.
  */
 public class StudentData extends AbstractTableModel {
 
     /*
-     * Ez a tagváltozó tárolja a hallgatói adatokat.
-     * NE MÓDOSÍTSD!
+     * Ez a tagvÃ¡ltozÃ³ tÃ¡rolja a hallgatÃ³i adatokat.
+     * NE MÃ“DOSÃTSD!
      */
     List<Student> students = new ArrayList<>();
 
@@ -45,9 +45,9 @@ public class StudentData extends AbstractTableModel {
     @Override
     public String getColumnName(int column) {
         switch (column){
-            case 0: return "Nev";
+            case 0: return "NÃ©v";
             case 1: return "Neptun";
-            case 2: return "Alairas";
+            case 2: return "AlÃ¡Ã­rÃ¡s";
             case 3: return "Jegy";
             default: return super.getColumnName(column);
         }
